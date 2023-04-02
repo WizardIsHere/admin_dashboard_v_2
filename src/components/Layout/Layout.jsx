@@ -3,12 +3,16 @@ import React from 'react'
 import styles from './Layout.module.css';
 import {BiSearch} from 'react-icons/bi';
 import Sidebar from '../Sidebar/Sidebar';
+import { Outlet, useLocation } from 'react-router-dom';
 const Layout = () => {
+
+  const {pathname}= useLocation();
+
   return (
     <div className={styles.container}>
 
         <Sidebar/>
-
+          {pathname === "/" && <Navigate to="/dashboard" />}
         <div className={styles.dashboard}>
             <div className={styles.topBaseGradients}>
                 <div className='gradient-red'></div>
@@ -31,8 +35,12 @@ const Layout = () => {
                   <span>daniel.sw@pm.com</span>
                 </div>
               </div>
+              
+              
             </div>
-
+            <div className={styles.content}>
+                <Outlet />
+              </div>
 
 
         </div>
