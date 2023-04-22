@@ -1,7 +1,7 @@
 import styles from './Statistics.module.css'
 import { BsArrowUpShort } from 'react-icons/bs'
 import { groupNumber } from '../../data'
-// import StatisticsChart from '../StatisticsChart/StatisticsChart'
+import StatisticsChart from '../StatisticsCharts/StatisticsCharts'
 
 
 const Statistics = () => {
@@ -17,7 +17,8 @@ const Statistics = () => {
                     </div>
 
                     <div className={styles.card}>
-                        <span>Top item this month</span><span>Office comps</span>
+                        <span>🔥 Hot product of the month</span>
+                        <span>Laptops</span>
                     </div>
                 </div>
 
@@ -35,7 +36,7 @@ const Statistics = () => {
             </div>
 
 
-            {/* <StatisticsChart /> */}
+            <StatisticsChart />
         </div>
     )
 }
